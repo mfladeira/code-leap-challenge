@@ -1,0 +1,21 @@
+.Button {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  border-radius: 8px;
+  padding: 6.79px 30px;
+  border: none;
+  cursor: pointer;
+
+  &.Disabled {
+    cursor: default;
+  }
+
+  &.Filled {
+    background-color: #7695ec;
+    color: #ffffff;
+  }
+}

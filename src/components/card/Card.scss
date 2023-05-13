@@ -1,0 +1,21 @@
+.Card {
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 16px;
+  padding: 24px;
+
+  .title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    color: #000000;
+  }
+
+  .containerButtons {
+    display: flex;
+    justify-content: end;
+    margin-top: 16px;
+  }
+}

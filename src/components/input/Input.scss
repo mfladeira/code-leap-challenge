@@ -1,0 +1,38 @@
+.InputContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+
+  .label {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+  }
+
+  .input {
+    margin-top: 8px;
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #777777;
+    border-radius: 8px;
+    height: 32px;
+    padding: 11.2px 8px;
+
+    &::placeholder {
+      color: #cccccc;
+    }
+
+    &::-webkit-input-placeholder {
+      /* Edge */
+      color: #cccccc;
+    }
+
+    &:-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: #cccccc;
+    }
+  }
+}
