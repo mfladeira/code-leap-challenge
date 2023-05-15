@@ -4,6 +4,7 @@ interface IInput {
   placeholder: string;
   label: string;
   isTextArea?: boolean;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const Input = (props: IInput) => {
@@ -32,6 +33,7 @@ export const Input = (props: IInput) => {
             type="text"
             className="input"
             placeholder={props.placeholder}
+            onChange={props.onChange}
           />
         </>
       )}

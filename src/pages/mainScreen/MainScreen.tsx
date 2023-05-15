@@ -74,7 +74,7 @@ export const MainScreen = () => {
           />,
         ]}
       /> */}
-      <Card
+      {/* <Card
         isModal
         width={660}
         title="Edit item"
@@ -85,7 +85,7 @@ export const MainScreen = () => {
       >
         <Input placeholder="Hello world" label="Title" />
         <Input isTextArea placeholder="Content here" label="Content" />
-      </Card>
+      </Card> */}
     </div>
   );
 };
