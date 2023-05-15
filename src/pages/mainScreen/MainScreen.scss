@@ -3,12 +3,33 @@
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: #dddddd;
-
-  .MainScreenContainer {
+  .mainScreenContainer {
     min-height: 100vh;
     height: 100%;
     width: 800px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
+
+    header {
+      width: 100%;
+      margin: 0;
+      height: 80px;
+      background: #7695ec;
+      padding: 27px 37px;
+
+      p {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 26px;
+        color: #ffffff;
+      }
+    }
+
+    main {
+      padding: 24px;
+    }
   }
 }
