@@ -18,4 +18,20 @@
     background-color: #7695ec;
     color: #ffffff;
   }
+
+  &.Danger {
+    background: #ff5151;
+    color: #ffffff;
+  }
+
+  &.OutLine {
+    background: #ffffff;
+    color: #000000;
+    border: 1px solid #999999;
+  }
+
+  &.Success {
+    background: #47b960;
+    color: #ffffff;
+  }
 }

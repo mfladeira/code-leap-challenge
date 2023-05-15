@@ -5,6 +5,7 @@ import { Input } from "../../components/input/Input";
 import { Post } from "../../components/post/Post";
 import DeleteIcon from "../../assets/DeleteIcon.svg";
 import EditIcon from "../../assets/EditIcon.svg";
+import { Link } from "react-router-dom";
 
 export const MainScreen = () => {
   return (
@@ -57,6 +58,34 @@ export const MainScreen = () => {
           </article> */}
         </main>
       </div>
+
+      {/* <Card
+        isModal
+        width={660}
+        title="Are you sure you want to delete this item?"
+        buttons={[
+          <Link
+            to="/main-screen"
+            children={<Button text="Cancel" theme="OutLine" disabled={false} />}
+          />,
+          <Link
+            to="/main-screen"
+            children={<Button text="Delete" theme="Danger" disabled={false} />}
+          />,
+        ]}
+      /> */}
+      <Card
+        isModal
+        width={660}
+        title="Edit item"
+        buttons={[
+          <Button text="Cancel" theme="OutLine" disabled={false} />,
+          <Button text="Save" theme="Success" disabled={false} />,
+        ]}
+      >
+        <Input placeholder="Hello world" label="Title" />
+        <Input isTextArea placeholder="Content here" label="Content" />
+      </Card>
     </div>
   );
 };

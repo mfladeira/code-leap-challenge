@@ -2,7 +2,7 @@ import "./Button.scss";
 
 interface IButton {
   text: string;
-  theme: "Filled" | "OutLine";
+  theme: "Filled" | "OutLine" | "Danger" | "Success";
   disabled: boolean;
 }
 export const Button = (props: IButton) => {
