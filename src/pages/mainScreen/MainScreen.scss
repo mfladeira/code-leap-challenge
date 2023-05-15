@@ -5,13 +5,18 @@
   justify-content: center;
   align-items: center;
   background-color: #dddddd;
+
   .mainScreenContainer {
     min-height: 100vh;
     height: 100%;
     width: 800px;
     background-color: #ffffff;
 
-    header {
+    article {
+      margin-bottom: 24px;
+    }
+
+    .header {
       width: 100%;
       margin: 0;
       height: 80px;

@@ -1,0 +1,61 @@
+.Post {
+  background: #ffffff;
+  border-bottom: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
+  border-radius: 16px;
+
+  .headerPost {
+    background-color: #7695ec;
+    border-radius: 16px 16px 0px 0px;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    color: #ffffff;
+  }
+
+  .buttons {
+    display: flex;
+  }
+
+  main {
+    padding: 24px;
+
+    .infoUser {
+      display: flex;
+      justify-content: space-between;
+      font-family: "Roboto";
+      font-style: normal;
+      font-size: 18px;
+      line-height: 21px;
+      color: #777777;
+
+      span:first-child {
+        font-weight: 700;
+        text-align: left;
+      }
+
+      span:last-child {
+        font-weight: 400;
+        text-align: right;
+      }
+    }
+
+    .content {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 21px;
+      margin-top: 16px;
+    }
+  }
+}
