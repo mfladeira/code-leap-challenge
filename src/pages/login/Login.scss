@@ -1,3 +1,5 @@
+@import "../../main.scss";
+
 .Login {
   background-color: #dddddd;
   min-height: 100vh;
@@ -5,4 +7,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @include pageAnimation;
 }

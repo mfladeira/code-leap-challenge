@@ -10,6 +10,7 @@ import "./MainScreen.scss";
 import DeleteIcon from "../../assets/DeleteIcon.svg";
 import EditIcon from "../../assets/EditIcon.svg";
 import { Link } from "react-router-dom";
+import { Spinner } from "../../components/spinner/Spinner";
 
 interface IPost {
   content: string;
@@ -28,6 +29,7 @@ export const MainScreen = () => {
   const user = useSelector((state: any) => state.loginReducer.user);
   const [selectedPost, setSelectedPost] = useState<IPost | undefined>();
   const [status, setStatus] = useState<"Editing" | "Deleting" | "">("");
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     getPosts();
@@ -71,8 +73,12 @@ export const MainScreen = () => {
 
   const getPosts = async () => {
     try {
+      setIsLoading(true);
+
       const response = await api.get("/");
       setPosts(response.data.results);
+
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
@@ -123,45 +129,53 @@ export const MainScreen = () => {
               />
             </Card>
           </article>
-          {posts.map((post) => {
-            return (
-              <article key={post.id}>
-                <Post
-                  title={post.title}
-                  width={752}
-                  author={post.username}
-                  date={post.created_datetime}
-                  buttons={
-                    post.username == user
-                      ? [
-                          <img
-                            src={DeleteIcon}
-                            width={18}
-                            height={22.5}
-                            style={{ cursor: "pointer" }}
-                            onClick={() => {
-                              setSelectedPost(post);
-                              setStatus("Deleting");
-                            }}
-                          />,
-                          <img
-                            src={EditIcon}
-                            width={30}
-                            height={26}
-                            style={{ marginLeft: 34, cursor: "pointer" }}
-                            onClick={() => {
-                              setSelectedPost(post);
-                              setStatus("Editing");
-                            }}
-                          />,
-                        ]
-                      : []
-                  }
-                  content={post.content}
-                />
-              </article>
-            );
-          })}
+          {isLoading ? (
+            <div className="containerSpinner">
+              <Spinner />
+            </div>
+          ) : (
+            <>
+              {posts.map((post) => {
+                return (
+                  <article key={post.id}>
+                    <Post
+                      title={post.title}
+                      width={752}
+                      author={post.username}
+                      date={post.created_datetime}
+                      buttons={
+                        post.username == user
+                          ? [
+                              <img
+                                src={DeleteIcon}
+                                width={18}
+                                height={22.5}
+                                style={{ cursor: "pointer" }}
+                                onClick={() => {
+                                  setSelectedPost(post);
+                                  setStatus("Deleting");
+                                }}
+                              />,
+                              <img
+                                src={EditIcon}
+                                width={30}
+                                height={26}
+                                style={{ marginLeft: 34, cursor: "pointer" }}
+                                onClick={() => {
+                                  setSelectedPost(post);
+                                  setStatus("Editing");
+                                }}
+                              />,
+                            ]
+                          : []
+                      }
+                      content={post.content}
+                    />
+                  </article>
+                );
+              })}
+            </>
+          )}
         </main>
       </div>
 

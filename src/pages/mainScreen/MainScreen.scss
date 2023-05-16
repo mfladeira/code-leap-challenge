@@ -1,3 +1,5 @@
+@import "../../main.scss";
+
 .MainScreen {
   width: 100%;
   min-height: 100vh;
@@ -5,6 +7,7 @@
   justify-content: center;
   align-items: center;
   background-color: #dddddd;
+  @include pageAnimation;
 
   .mainScreenContainer {
     min-height: 100vh;
@@ -13,6 +16,7 @@
     background-color: #ffffff;
 
     article {
+      @include pageAnimation;
       margin-bottom: 24px;
     }
 
@@ -35,6 +39,12 @@
 
     main {
       padding: 24px;
+
+      .containerSpinner {
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, 100%);
+      }
     }
   }
 }

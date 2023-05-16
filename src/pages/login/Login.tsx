@@ -25,6 +25,7 @@ export const Login = () => {
         <Input
           placeholder="John doe"
           label="Please enter your username"
+          value={user}
           onChange={(e) => dispatch(login(e.target.value))}
         />
       </Card>
