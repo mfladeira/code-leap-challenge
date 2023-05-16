@@ -4,7 +4,12 @@ interface IInput {
   placeholder: string;
   label: string;
   isTextArea?: boolean;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>
+  ) => void;
+  value: string;
 }
 
 export const Input = (props: IInput) => {
@@ -17,10 +22,12 @@ export const Input = (props: IInput) => {
           </label>
           <textarea
             id="textArea"
+            value={props.value}
             rows={4}
             cols={50}
             className="textArea"
             placeholder={props.placeholder}
+            onChange={props.onChange}
           />
         </>
       ) : (
@@ -30,6 +37,7 @@ export const Input = (props: IInput) => {
           </label>
           <input
             id="input"
+            value={props.value}
             type="text"
             className="input"
             placeholder={props.placeholder}

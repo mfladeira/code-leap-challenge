@@ -20,6 +20,10 @@
     font-size: 22px;
     line-height: 26px;
     color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 70%;
   }
 
   .buttons {
@@ -41,6 +45,10 @@
       span:first-child {
         font-weight: 700;
         text-align: left;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 70%;
       }
 
       span:last-child {
