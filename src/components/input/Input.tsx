@@ -10,6 +10,7 @@ interface IInput {
       | React.ChangeEvent<HTMLTextAreaElement>
   ) => void;
   value: string;
+  id: string;
 }
 
 export const Input = (props: IInput) => {
@@ -17,11 +18,11 @@ export const Input = (props: IInput) => {
     <div className="InputContainer">
       {props.isTextArea ? (
         <>
-          <label htmlFor="textArea" className="label">
+          <label htmlFor={props.id} className="label">
             {props.label}
           </label>
           <textarea
-            id="textArea"
+            id={props.id}
             value={props.value}
             rows={4}
             cols={50}
@@ -32,11 +33,11 @@ export const Input = (props: IInput) => {
         </>
       ) : (
         <>
-          <label htmlFor="input" className="label">
+          <label htmlFor={props.id} className="label">
             {props.label}
           </label>
           <input
-            id="input"
+            id={props.id}
             value={props.value}
             type="text"
             className="input"

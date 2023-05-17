@@ -23,6 +23,7 @@ export const Login = () => {
         ]}
       >
         <Input
+          id="InputLogin"
           placeholder="John doe"
           label="Please enter your username"
           value={user}

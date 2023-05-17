@@ -4,11 +4,12 @@ import { Card } from "../../components/card/Card";
 import { Button } from "../../components/button/Button";
 import { Input } from "../../components/input/Input";
 import { Post } from "../../components/post/Post";
-import { changeContent, changeTitle } from "../../actions";
+import { changeContent, changeTitle, login } from "../../actions";
 import { api } from "../../services/api";
 import "./MainScreen.scss";
 import DeleteIcon from "../../assets/DeleteIcon.svg";
 import EditIcon from "../../assets/EditIcon.svg";
+import ExitIcon from "../../assets/ExitIcon.svg";
 import { Link } from "react-router-dom";
 import { Spinner } from "../../components/spinner/Spinner";
 
@@ -94,11 +95,23 @@ export const MainScreen = () => {
     }
   };
 
+  const loggout = () => {
+    dispatch(login(""));
+  };
+
   return (
     <div className="MainScreen">
       <div className="mainScreenContainer">
         <header className="header">
           <p>CodeLeap Network</p>
+          <Link to={"/"}>
+            <img
+              style={{ width: 26, height: 26, cursor: "pointer" }}
+              src={ExitIcon}
+              alt="Exit Icon"
+              onClick={() => loggout()}
+            />
+          </Link>
         </header>
         <main>
           <article>
@@ -115,12 +128,14 @@ export const MainScreen = () => {
               ]}
             >
               <Input
+                id="InputTitle"
                 placeholder="Hello world"
                 label="Title"
                 onChange={(e) => dispatch(changeTitle(e.target.value))}
                 value={title}
               />
               <Input
+                id="InputContent"
                 isTextArea
                 placeholder="Content here"
                 label="Content"
@@ -227,6 +242,7 @@ export const MainScreen = () => {
           ]}
         >
           <Input
+            id="InputTitleEdit"
             placeholder="Hello world"
             label="Title"
             value={selectedPost?.title!}
@@ -235,6 +251,7 @@ export const MainScreen = () => {
             }}
           />
           <Input
+            id="InputContentEdit"
             isTextArea
             placeholder="Content here"
             label="Content"
