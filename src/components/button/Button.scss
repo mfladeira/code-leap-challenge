@@ -8,34 +8,33 @@
   border-radius: 8px;
   padding: 6.79px 30px;
   border: none;
-  cursor: pointer;
-
-  &:hover {
-    opacity: 0.8;
-  }
   
-  &.Disabled {
-    cursor: default;
-  }
+  &:not(:disabled) {
+    cursor: pointer;
+    
+    &.Filled {
+      background-color: #7695ec;
+      color: #ffffff;
+    }
 
-  &.Filled {
-    background-color: #7695ec;
-    color: #ffffff;
-  }
+    &.Danger {
+      background: #ff5151;
+      color: #ffffff;
+    }
 
-  &.Danger {
-    background: #ff5151;
-    color: #ffffff;
-  }
+    &.OutLine {
+      background: #ffffff;
+      color: #000000;
+      border: 1px solid #999999;
+    }
 
-  &.OutLine {
-    background: #ffffff;
-    color: #000000;
-    border: 1px solid #999999;
-  }
+    &.Success {
+      background: #47b960;
+      color: #ffffff;
+    }
 
-  &.Success {
-    background: #47b960;
-    color: #ffffff;
+    &:hover, &:focus {
+      opacity: 0.8;
+    }
   }
 }

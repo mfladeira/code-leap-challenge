@@ -7,8 +7,8 @@ import { login } from "../../actions";
 import "./Login.scss";
 
 export const Login = () => {
-  const dispatch   = useDispatch();
-  const user       = useSelector((state: any) => state.loginReducer.user);
+  const dispatch = useDispatch();
+  const user = useSelector((state: any) => state.loginReducer.user);
   const isLoggedIn = localStorage.getItem("user");
 
   if (isLoggedIn) {
@@ -28,7 +28,7 @@ export const Login = () => {
                 text="ENTER"
                 theme="Filled"
                 disabled={!user}
-                onClick={() => localStorage.setItem("user", user)}
+                onClick={() => localStorage.setItem("user", user.trimEnd().trimStart())}
               />
             }
           />,
@@ -39,7 +39,9 @@ export const Login = () => {
           placeholder="John doe"
           label="Please enter your username"
           value={user}
-          onChange={(e) => dispatch(login(e.target.value))}
+          onChange={(e) =>
+            dispatch(login(e.target.value))
+          }
         />
       </Card>
     </div>

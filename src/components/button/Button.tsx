@@ -9,7 +9,7 @@ interface IButton {
 export const Button = (props: IButton) => {
   return (
     <button
-      className={`Button ${props.disabled ? "Disabled" : props.theme}`}
+      className={`Button ${props.theme}`}
       disabled={props.disabled}
       onClick={props.onClick}
     >
