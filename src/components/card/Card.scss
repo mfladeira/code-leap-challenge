@@ -1,3 +1,5 @@
+@import "../../main.scss";
+
 .Card {
   background: #ffffff;
   border: 1px solid #cccccc;
@@ -28,7 +30,7 @@
   top: 0;
   left: 0;
   background: rgba(119, 119, 119, 0.8);
-
+  @include pageAnimation;
   .Card {
     position: absolute;
     left: 50%;

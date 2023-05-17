@@ -15,6 +15,12 @@
     width: 800px;
     background-color: #ffffff;
 
+    img {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
     article {
       @include pageAnimation;
       margin-bottom: 24px;
