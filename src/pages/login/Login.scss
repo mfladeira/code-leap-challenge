@@ -3,10 +3,19 @@
 .Login {
   background-color: #dddddd;
   min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
   @include pageAnimation;
+}
+
+@media (max-width: 500px) {
+  .Login {
+    .Card {
+      width: 100% !important;
+    }
+  }
 }

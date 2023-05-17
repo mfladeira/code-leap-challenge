@@ -50,3 +50,15 @@
     }
   }
 }
+
+@media (max-width: 800px) {
+  .MainScreen {
+    .mainScreenContainer {
+      width: 100% !important;
+    }
+
+    .Card {
+      width: 100% !important;
+    }
+  }
+}
