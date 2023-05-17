@@ -10,7 +10,7 @@ import "./MainScreen.scss";
 import DeleteIcon from "../../assets/DeleteIcon.svg";
 import EditIcon from "../../assets/EditIcon.svg";
 import ExitIcon from "../../assets/ExitIcon.svg";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { Spinner } from "../../components/spinner/Spinner";
 
 interface IPost {
@@ -22,15 +22,19 @@ interface IPost {
 }
 
 export const MainScreen = () => {
-  const dispatch = useDispatch();
-  const [posts, setPosts] = useState<Array<IPost>>([]);
-  const { title, content } = useSelector(
-    (state: any) => state.mainScreenReducer
-  );
-  const user = useSelector((state: any) => state.loginReducer.user);
+  const dispatch                        = useDispatch();
+  const { title, content }              = useSelector((state: any) => state.mainScreenReducer);
+
+  const [posts, setPosts]               = useState<Array<IPost>>([]);
   const [selectedPost, setSelectedPost] = useState<IPost | undefined>();
-  const [status, setStatus] = useState<"Editing" | "Deleting" | "">("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [status, setStatus]             = useState<"Editing" | "Deleting" | "">("");
+  const [isLoading, setIsLoading]       = useState(false);
+  
+  const user = localStorage.getItem("user");
+
+  if (!user) {
+    return <Navigate to="/" />;
+  }
 
   useEffect(() => {
     getPosts();
@@ -96,6 +100,7 @@ export const MainScreen = () => {
   };
 
   const loggout = () => {
+    localStorage.clear();
     dispatch(login(""));
   };
 
