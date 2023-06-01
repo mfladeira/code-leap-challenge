@@ -1,8 +1,13 @@
+![Captura de tela 2023-06-01 191105](https://github.com/mfladeira/code-leap-challenge/assets/44096279/2450d838-8afc-4097-8b11-1cb7ace1888c)
 
 Project Deployed in: <a align="center" href="https://codeleaptestmateus.web.app/" target="_blank">
     https://codeleaptestmateus.web.app/
   </a>
   
+## Overview
+
+An application that perform basic CRUD functions with an external API.
+
 Technologies
 ------------------
 
